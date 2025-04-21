@@ -3,6 +3,21 @@
 Author: S051_Destroy Lai Lai's Machine (aka DLLM)
 ![FIRST BLOOD WOO](img/FirstBlood.png)
 
+## Situation
+
+Digital Instrumentality Project
+
+Episode 26 of Evangelion... but for computers! Files are losing their 'ego' and turning into LCL of 1s and 0s. All hope is not yet lost because the files are still separated by 'buffers' of 00s. Restore 'ego' of 3 files and 'carve' them out.
+
+Author: Karma\
+Flag Format: PUCTF25{[a-zA-Z0-9_]+_[a-fA-F0-9]{32}}\
+
+Hint:\
+1. My favorite color is green 2. Open the document for some hints
+
+Attachments:\
+`Fanta_file_new`\
+(Stored at `step1/Fanta_file_new`)
 
 ## The Beginning
 
