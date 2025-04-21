@@ -1,6 +1,9 @@
 # Digital Instrumentality Project - Writeup
 
+## Please open issue should you have any questions. It will be added to the respective Q&A section.
+
 Author: S051_Destroy Lai Lai's Machine (aka DLLM)
+
 ![FIRST BLOOD WOO](img/FirstBlood.png)
 
 ## Situation
@@ -12,7 +15,7 @@ Episode 26 of Evangelion... but for computers! Files are losing their 'ego' and 
 Author: Karma\
 Flag Format: PUCTF25{[a-zA-Z0-9_]+_[a-fA-F0-9]{32}}\
 
-Hint:\
+Hint:
 1. My favorite color is green 2. Open the document for some hints
 
 Attachments:\
