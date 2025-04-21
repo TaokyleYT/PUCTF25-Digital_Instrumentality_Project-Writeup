@@ -1,5 +1,9 @@
 # Digital Instrumentality Project - Writeup
 
+Author: S051_Destroy Lai Lai's Machine (aka DLLM)
+![FIRST BLOOD WOO](img/FirstBlood.png)
+
+
 ## The Beginning
 
 The first thing we see is a file called `Fanta_file_new`.\
