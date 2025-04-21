@@ -442,7 +442,7 @@ A - Only after I almost finish the entire challenge when I realise this is a `.o
 but since deflating it gives more informations imo, let's keep it as a zip
 
 Q - how did you even optimize knuth shuffle\
-A - this is going to be long. 
+A - this is going to be long.\
 first, `% 2**32` and `& 0xFFFFFFFF` are the same thing, which is to restrict the result to 32 bits\
 so, we can just remove them, and use a `int32` to store the result.\
 Moreover, since there are no negative numbers in the code, the result is always positive, so we can use `uint32_t` to prevent overflows\
