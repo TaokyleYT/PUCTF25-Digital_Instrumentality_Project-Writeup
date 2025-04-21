@@ -445,9 +445,13 @@ Q - how did you even optimize knuth shuffle\
 A - this is going to be long.\
 first, `% 2**32` and `& 0xFFFFFFFF` are the same thing, which is to restrict the result to 32 bits\
 so, we can just remove them, and use a `int32` to store the result.\
-Moreover, since there are no negative numbers in the code, the result is always positive, so we can use `uint32_t` to prevent overflows\
+Moreover, since there are no negative numbers in the code, the result is always positive, so we can use `uint32_t` to prevent overflows
 
 after removing the modulo and bitwise and, \
 you get `result = (result ^ (result >> 3));` and `result = (result * 2654435761);`,\
 which can be replaced with `result ^= result >> 3;` and `result *= factor;`\
 where `factor` is a constant `2654435761`
+
+Q - Arn't the code stored in exif data of the mp4?\
+A - Yes, but I only used window's explorer.exe to check exif of the mp4.\
+The code IS stored in the EXIF of Fanta2.mp4, in the `balance` sector
