@@ -8,9 +8,9 @@ We know that it contains at least 3 files, because the challenge asked us to "Re
 ### Identifying the Files
 
 first, let's view its content in hex editor (I use hex editor in vscode).
-![Fanta_File_new's first NUL buffer](img/NUL_buf1.png)
-![Fanta_File_new's second NUL buffer](img/NUL_buf2.png)
-![Fanta_File_new's third NUL buffer](img/NUL_buf3.png)
+![Fanta_File_new's first NUL buffer](https://github.com/TaokyleYT/PUCTF25-Digital_Instrumentality_Project-Writeup/blob/master/img/NUL_Buf1.png)
+![Fanta_File_new's second NUL buffer](https://github.com/TaokyleYT/PUCTF25-Digital_Instrumentality_Project-Writeup/blob/master/img/NUL_buf2.png)
+![Fanta_File_new's third NUL buffer](https://github.com/TaokyleYT/PUCTF25-Digital_Instrumentality_Project-Writeup/blob/master/img/NUL_buf3.png)
 After searching for a large pad of 00s, we found 3 matches, 2 of them is interesting.\
 They got "File ends right before this sentence" and "File starts right after this sentence" right next to the pads,\
 which is quite obvious that we have 3 files in this big thingy.
@@ -101,7 +101,7 @@ how about the rest?
 
 ### Fanta0
 
-![Fanta0's hex](img/Fanta0_hex.png)
+![Fanta0's hex](https://github.com/TaokyleYT/PUCTF25-Digital_Instrumentality_Project-Writeup/blob/master/img/Fanta0_hex.png)
 
 opening it in hex editor, we can see IHDR. What is that?
 
@@ -109,7 +109,7 @@ searching IHDR online, we can see the first few results are related to PNG.\
 (btw IHDR is a chunk that contains the image information such as width, height, size of color byte, color type, compression, filter and enlacement method)
 
 we can double check that by going to the end of the file, where lies `0000000049454e44ae426082`, a classic PNG file suffix
-![Fanta0's hex (last section)](img/Fanta0_hex_end.png)
+![Fanta0's hex (last section)](https://github.com/TaokyleYT/PUCTF25-Digital_Instrumentality_Project-Writeup/blob/master/img/Fanta0_hex_end.png)
 
 but Fanta0.png seemed to have its header missing
 
@@ -120,11 +120,11 @@ now we know what bytes are missing, and we can repair it.
 
 don't forget to add a .png extension to Fanta0
 
-### Fanta1.zip
+### Fanta1
 
 things are much easier when you already know what it is
 
-![Fanta1's hex](img/Fanta1_hex.png)
+![Fanta1's hex](https://github.com/TaokyleYT/PUCTF25-Digital_Instrumentality_Project-Writeup/blob/master/img/Fanta1_hex.png)
 
 hmm, where is the `PK\x03\x04` signature of the zip? Lets add it in, it's now fixed
 
@@ -132,7 +132,7 @@ hmm, where is the `PK\x03\x04` signature of the zip? Lets add it in, it's now fi
 
 let's hex it too
 
-![Fanta2's hex](img/Fanta2_hex.png)
+![Fanta2's hex](https://github.com/TaokyleYT/PUCTF25-Digital_Instrumentality_Project-Writeup/blob/master/img/Fanta2_hex.png)
 
 is there anything familiar?
 `avc1mp4` from 0x18 to 0x1E
@@ -242,7 +242,7 @@ encrypted with base64
 
 we dont even need to spend time assembling the structure, as we can see the rendered version (low quality) in thumbnail.png
 
-![thumbnail](img/Fanta1_thumbnail.png)
+![thumbnail](https://github.com/TaokyleYT/PUCTF25-Digital_Instrumentality_Project-Writeup/blob/master/img/Fanta1_thumbnail.png)
 
 <details open>
   <summary>A bit off topic</summary>
@@ -333,7 +333,7 @@ to lessen the workload
 
 it doesn't seem to have anything sketchy in the frames, how about the audio?
 
-![Fanta2.mp3](img/Fanta2.mp3.png)
+![Fanta2.mp3](https://github.com/TaokyleYT/PUCTF25-Digital_Instrumentality_Project-Writeup/blob/master/img/Fanta2.mp3.png)
 
 WOAH I see some familiar wordings inside...\
 is that a python script?
