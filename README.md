@@ -1,5 +1,11 @@
 # Digital Instrumentality Project - Writeup
 
+## Files related to solving the challenge are in their respective folders
+
+The Beginning -> step1\
+Repair service -> step2\
+Decryption in progress -> step3
+
 ## Please open issue should you have any questions. It will be added to the respective Q&A section.
 
 Author: S051_Destroy Lai Lai's Machine (aka DLLM)
