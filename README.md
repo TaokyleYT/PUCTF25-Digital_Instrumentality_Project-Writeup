@@ -21,8 +21,10 @@ Episode 26 of Evangelion... but for computers! Files are losing their 'ego' and 
 Author: Karma\
 Flag Format: PUCTF25{[a-zA-Z0-9_]+_[a-fA-F0-9]{32}}\
 
-Hint:
+<details>
+<summary>Hint:</summary>
 1. My favorite color is green 2. Open the document for some hints
+</details>
 
 Attachments:\
 `Fanta_file_new`\
@@ -356,7 +358,8 @@ so lets begin by wandering around in its hex
 ...\
 oops, over 9 million characters? hell naw
 
-let's proceed by disassembling the mp4 back to frames and audio to lessen the workload
+let's proceed by disassembling the mp4 back to frames and audio to lessen the workload\
+(is there a better way? check out Q&A)
 
 it doesn't seem to have anything sketchy in the frames, how about the audio?
 
