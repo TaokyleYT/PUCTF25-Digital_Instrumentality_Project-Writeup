@@ -75,7 +75,7 @@ A - Because I dont want to waste time onto naming, the init file is a Fanta_file
 
 ## Repair service
 
-whenever we encounter file with unknown type, I always do a `binwalk` first
+whenever I encounter file with unknown type, I always do a `binwalk` first
 
 ```console
 admin@XXXX:/mnt/c/Users/XXXX/DIP/step2$ binwalk *
@@ -167,7 +167,7 @@ let's hex it too
 is there anything familiar?
 `avc1mp4` from 0x18 to 0x1E
 
-which means it is a mp4 with avc1
+which means it is a mp4 with avc1 encodings
 
 lets add the .mp4 extension to it first...\
 wait it's already fixed? wow
