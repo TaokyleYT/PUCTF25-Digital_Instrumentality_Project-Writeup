@@ -67,10 +67,10 @@ we can extract the 3 files' content as Fanta0, Fanta1 and Fanta2
 
 ## The Beginning - checkpoint Q&A
 
-Q - Why not use the NUL padding as the split?\
+**Q - Why not use the NUL padding as the split?**\
 A - Because I found out the amount of NUL pads are not consistent, and copying and pasting a text is easier than typing a bunch of `\00`
 
-Q - Why Fanta{n}?\
+**Q - Why Fanta{n}?**\
 A - Because I dont want to waste time onto naming, the init file is a Fanta_file so I just Fanta it all the way
 
 ## Repair service
@@ -150,7 +150,7 @@ now we know what bytes are missing, and we can repair it.
 
 don't forget to add a .png extension to Fanta0
 
-### Fanta1.zip
+### Fanta1
 
 things are much easier when you already know what it is
 
@@ -174,7 +174,7 @@ wait it's already fixed? wow
 
 ## Repair service - checkpoint Q&A
 
-Q - how do you know the only thing missing in Fanta1.zip is `PK\x03\x04`?\
+**Q - how do you know the only thing missing in Fanta1.zip is `PK\x03\x04`?**\
 A - you can see more `PK\x03\x04\x14\x00\x00\x08\x00\x00\x3D\80` chunks below.\
 By cross referencing (always has been) you can see the only missing is `PK\x03\x04` (the header)\
 where the mininum version needed to extract (`\x14\x00`), \
@@ -440,11 +440,11 @@ PUCTF25{1st_Rule_of_fite_club_is_to_nEvEr_w0rry_and_havE_funn_3601bc5bcef53e1525
 
 ## Decryption in progress - checkpoint Q&A
 
-Q - Why does Fanta1.zip contains so much xml and thumbnail and META-INF?\
+**Q - Why does Fanta1.zip contains so much xml and thumbnail and META-INF?**\
 A - Only after I almost finish the entire challenge when I realise this is a `.odt` file instead of `.zip` (verified by checking mimetype)\
 but since deflating it gives more informations imo, let's keep it as a zip
 
-Q - how did you even optimize knuth shuffle\
+**Q - how did you even optimize knuth shuffle**\
 A - this is going to be long.\
 first, `% 2**32` and `& 0xFFFFFFFF` are the same thing, which is to restrict the result to 32 bits\
 so, we can just remove them, and use a `int32` to store the result.\
@@ -455,6 +455,6 @@ you get `result = (result ^ (result >> 3));` and `result = (result * 2654435761)
 which can be replaced with `result ^= result >> 3;` and `result *= factor;`\
 where `factor` is a constant `2654435761`
 
-Q - Arn't the code stored in exif data of the mp4?\
+**Q - Arn't the code stored in exif data of the mp4?**\
 A - Yes, but I only used window's explorer.exe to check exif of the mp4.\
 The code IS stored in the EXIF of Fanta2.mp4, in the `balance` sector
