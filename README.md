@@ -359,7 +359,7 @@ so lets begin by wandering around in its hex
 oops, over 9 million characters? hell naw
 
 let's proceed by disassembling the mp4 back to frames and audio to lessen the workload\
-(is there a better way? check out Q&A)[^3]
+(is there a better way? check out Q&A)
 
 it doesn't seem to have anything sketchy in the frames, how about the audio?
 
@@ -370,7 +370,7 @@ is that a python script?
 
 let's rip it out
 
-here is the program
+here is the ripped program
 
 ```python
 import hashlib
@@ -455,6 +455,6 @@ you get `result = (result ^ (result >> 3));` and `result = (result * 2654435761)
 which can be replaced with `result ^= result >> 3;` and `result *= factor;`\
 where `factor` is a constant `2654435761`
 
-**Q[^3] - Arn't the code stored in exif data of the mp4?**\
+**Q - Arn't the code stored in exif data of the mp4?**\
 A - Yes, but I only used window's explorer.exe to check exif of the mp4.\
 The code IS stored in the EXIF of Fanta2.mp4, in the `balance` sector
