@@ -12,6 +12,8 @@ Author: S051_Destroy Lai Lai's Machine (aka DLLM)
 
 ![FIRST BLOOD WOO](img/FirstBlood.png)
 
+OS: I love repairing files
+
 ## Situation
 
 Digital Instrumentality Project
