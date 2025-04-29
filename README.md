@@ -21,7 +21,7 @@ Digital Instrumentality Project
 Episode 26 of Evangelion... but for computers! Files are losing their 'ego' and turning into LCL of 1s and 0s. All hope is not yet lost because the files are still separated by 'buffers' of 00s. Restore 'ego' of 3 files and 'carve' them out.
 
 Author: Karma\
-Flag Format: PUCTF25{[a-zA-Z0-9_]+_[a-fA-F0-9]{32}}\
+Flag Format: PUCTF25{[a-zA-Z0-9_]+_[a-fA-F0-9]{32}}
 
 <details>
 <summary>Hint:</summary>
@@ -35,7 +35,7 @@ Attachments:\
 ## The Beginning
 
 The first thing we see is a file called `Fanta_file_new`.\
-We know that it contains at least 3 files, because the challenge asked us to "Restore 'ego' of **3** files and 'carve' them out."
+We know that it contains at least 3 files, because the challenge asked us to `Restore 'ego' of *3* files and 'carve' them out.`
 
 ### Identifying the Files
 
@@ -43,7 +43,7 @@ first, let's view its content in hex editor (I use hex editor in vscode).
 ![Fanta_File_new's first NUL buffer](img/NUL_Buf1.png)
 ![Fanta_File_new's second NUL buffer](img/NUL_Buf2.png)
 ![Fanta_File_new's third NUL buffer](img/NUL_Buf3.png)
-After searching for a large pad of 00s, we found 3 matches, 2 of them is interesting.\
+After searching for a large pad of 00s (`files are still separated by 'buffers' of 00s` in challenge desc), we found 3 matches, 2 of them is interesting.\
 They got "File ends right before this sentence" and "File starts right after this sentence" right next to the pads,\
 which is quite obvious that we have 3 files in this big thingy.
 
@@ -154,7 +154,7 @@ don't forget to add a .png extension to Fanta0
 
 ### Fanta1
 
-things are much easier when you already know what it is
+things are much easier when you already know its a `.zip` file
 
 ![Fanta1's hex](img/Fanta1_hex.png)
 
@@ -282,23 +282,26 @@ we dont even need to spend time assembling the structure, as we can see the rend
     --- START OFF TOPIC ---
 
     2 truth 1 lie
-    only encrypted with base 64
-    not XOR encrypted
+
+    The encrypted flag is in here somewhere
+    flag only encrypted with base64 and not XOR encrypted
     it hurts when Karma pees
 
-    if only encrypted with base64 is a lie
-    then it can be encrypted with other methods, not only XOR, 2nd might be true
-    Karma could hurt when bro pee
+    if the encrypted flag isn't here
+    the next one doesn't make sense
+    therefore not true
 
-    if not XOR encrypted is a lie
-    then its encrypted by not just base64, first one is also a lie
-    so its not possible
+    if flag is not only encrypted with base64 and with XOR too
+    its in here somewhere
+    and karma hurts when bro pee
+    maybe true
 
-    if karma doesnt hurt when bro pee, then
-    it is only encrypted with base64
-    and it is not encryped by XOR
+    if karma didn't hurt when bro pee
+    flag is here somewhere
+    and only encrypted with base64 and not XOR
+    deeper into decryption you know this is false
 
-    later you will know this entire game is a lie btw
+    so karma hurts when bro pee
 
     ---END OFF TOPIC---
 </details>
@@ -336,8 +339,6 @@ after b64decode into ascii, you get
 
 that doesn't seem to be a flag at all! what should we do?\
 well recall the hints, let's try XOR
-
-(btw here is when you know Karma's 2T1L is a lie, its either 3L or a 2L1T)
 
 however, XOR cipher requires a key, what can it be?\
 well do you recall the delimiter we ditched? lets try 09 as a key
@@ -456,6 +457,9 @@ after removing the modulo and bitwise and, \
 you get `result = (result ^ (result >> 3));` and `result = (result * 2654435761);`,\
 which can be replaced with `result ^= result >> 3;` and `result *= factor;`\
 where `factor` is a constant `2654435761`
+
+**Q - Is optimising knuth shuffle really necesserary?**\
+A - Nope, I did it just because I have time. The improvements should just be a few seconds, considering how fast C is (I mean C is just assembly with alot of macros, so you could say nothing is faster than binary (assembly)).
 
 **Q - Arn't the python program stored in exif data of the mp4?**\
 A - Yes, but I only used window's explorer.exe to check exif of the mp4, so I used a slower approach, unknown to this faster method.\
